@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    border: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: var(--font-fam);
+}
+
+:root{
+    --font-fam : 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --black-color: #202020;
+}
+
+#preloader  {
+    background: white url(images/logopreloader3.gif) no-repeat center center;
+    background-size:20vmax;
+    position:fixed;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    top:0;
+    width: 100%;
+    height: 100vh;
+    z-index:10;
+}
+
+nav{
+    position:sticky;
+    top: 0;
+    background-color: var(--black-color);
+}
+
+#nav-logo {
+    height: 2.5rem;
+    width: 2.5rem;
+    padding: 2px;
+}
+
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    align-items:center;
+    height: 6vh;
+    width:100%;
+}
+
+ul > li a{
+    position:relative;
+    color:white;
+    text-decoration:none;
+    font-family:var(--font-fam);
+    font-size:1.4em;
+    line-height: 1.2;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+
+ul > li a:not(.icon)::after {
+    content: "";
+    position: absolute;
+    background-color: white;
+    height: 5px;
+    width: 0;
+    right:0;
+    left:0;
+    margin:0 auto;
+    bottom: -11px;
+    transition: all 0.3s ease-in-out;
+}
+
+ul > li a:hover {
+    color: rgb(202, 194, 189);
+}
+
+ul > li a:hover:not(.icon)::after {
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+footer {
+    position:relative;
+    text-align: center;
+    font-size: 1.1em;
+}
+  
+.heart {
+    color: orangered;
+}
+  
+.icon{
+    display: none;
+}
+
+@media screen and (max-width: 811px) {
+
+nav ul > li:not(:first-child){
+    display: none;
+}
+
+.icon{
+    display: block;
+    color: white;
+    font-size:1.7rem;
+    position: absolute;
+    right:0;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+
+
+}
